@@ -33,7 +33,7 @@ namespace ApiSendEmail.Attributes
                 context.Result = new ContentResult()
                 {
                     StatusCode = 401,
-                    Content = "Api Key is not valid"
+                    Content = "Unauthorized client"
                 };
                 return;
             }
