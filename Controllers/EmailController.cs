@@ -3,6 +3,7 @@ using ApiSendEmail.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading;
 using System.Threading.Tasks;
+using ApiSendEmail.Attributes;
 using Microsoft.Extensions.Logging;
 
 namespace ApiSendEmail.Controllers
@@ -18,7 +19,7 @@ namespace ApiSendEmail.Controllers
             _mailService = mailService;
             _logger = logger;
         }
-
+        [ApiKey]
         [HttpPost]
         public async Task<IActionResult> Send([FromBody] MailRequest request, CancellationToken cancelToken)
         {
